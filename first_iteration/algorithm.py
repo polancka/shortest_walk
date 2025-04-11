@@ -156,3 +156,6 @@ print_adjacency_matrix(graph, nodes)
 
 #Vizualize the whole graph
 visualize_graph(graph, nodes, s=1, t=4)
+
+#This will come usefull when our shortest_path algorithm will work, since we will be able to highlight shortest path
+#visualize_graph(graph, nodes, s=1, t=4, highlight_path=[1, 2, 3, 4]) 

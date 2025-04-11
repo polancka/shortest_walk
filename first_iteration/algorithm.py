@@ -80,7 +80,7 @@ def print_adjacency_matrix(graph, nodes):
         matrix[i][i] = 0.0
 
     # Print header
-    header = "    " + "  ".join(f"{nid:>3}" for nid in node_ids)
+    header = "      " + "   ".join(f"{nid:>3}" for nid in node_ids)
     print(header)
     print("   " + "-" * (len(header) - 3))
     

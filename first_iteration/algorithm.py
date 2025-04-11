@@ -86,7 +86,10 @@ def print_adjacency_matrix(graph, nodes):
     
     # Print matrix rows
     for i, row in enumerate(matrix):
-        row_str = f"{node_ids[i]:>3}|" + " ".join(f"{val:>5.1f}" if val != np.inf else "  inf" for val in row)
+        row_str = f"{node_ids[i]:>3}|" + " ".join(
+                f"{int(val):>5}" if val != np.inf and val.is_integer() else f"{val:>5.1f}" if val != np.inf else "  inf"
+                for val in row
+        )
         print(row_str)
 		
 def visualize_graph(graph, nodes, s=None, t=None, highlight_path=None):

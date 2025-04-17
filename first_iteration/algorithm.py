@@ -4,6 +4,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 import networkx as nx
+import time
 
 class Vertex:
     def __init__(self, name):
@@ -235,7 +236,7 @@ if __name__ == "__main__":
 
 
     #shortest_path("test1.txt") #To satisfy header from navodila
-
+    start_time = time.time()
     if len(sys.argv) > 1:
         g, start, end = Graph.from_txt_file(sys.argv[1])
     else:
@@ -249,10 +250,10 @@ if __name__ == "__main__":
         start = 1
         end = 5
 
-    g.print_graph_info()
-    print("")
-    print("\n Adjacency matrix:")
-    g.print_adjacency_matrix()
+    #g.print_graph_info()
+    #print("")
+    #print("\n Adjacency matrix:")
+    #g.print_adjacency_matrix()
 
     #g.to_txt_file("output_graph.txt", k=0, s=start, t=end) #If u want to save our graph to txt file
     g.shortest_path_internal(start, end)
@@ -262,6 +263,9 @@ if __name__ == "__main__":
     #g.visualize_graph(s=1, t=4)
 
     # This will come usefull when our shortest_path algorithm will work, since we will be able to highlight shortest path
-    g.visualize_graph(s=1, t=4, highlight_path=g.get_shortest_path(5))
+    #g.visualize_graph(s=1, t=4, highlight_path=g.get_shortest_path(5))
 
-    print("Path:", g.get_shortest_path(5))  # Output like: [0, 2, 3, 4]
+    print("Path:", g.get_shortest_path(end))  # Output like: [0, 2, 3, 4]
+    end_time = time.time()
+    print(f"Execution time: {end_time - start_time:.6f} seconds")
+

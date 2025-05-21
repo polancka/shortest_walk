@@ -1,7 +1,7 @@
 # What file does what
 - sp_zip.py -- ``python sp_zip.py <filename.zip>``
 	Reads zip file and execute **sp.py** on 
-	each txt file
+	each txt file inside of <filename.zip>
 - sum_log_time.py -- ``python sum_log_time.py <file2read.txt>``
 	reads log.txt and outputs sum of every value in it, meaning it will tell u how long overall on all txt files inside zip did algorithm took
 	example if log.txt contains
